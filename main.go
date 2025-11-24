@@ -3,13 +3,19 @@ package main
 import (
 	"flag"
 	"log"
+
+	"main.go/telegram_bot_yt_lesson/clients/telegram"
+)
+
+const (
+	tgBotHost = "api.telegram.org"
 )
 
 func main() {
 	// передавать токен будем с помощью флага запуска программы
 	// token = flags.Get(token)
-	token := mustToken()
-	// tgClient = telegram.New(token)
+
+	tgClient = telegram.New(tgBotHost, mustToken())
 
 	//fetcher = fetcher.New() - отпправляет запросы к api tg и получает события
 	// fetcher и processor - общаются с api tg
